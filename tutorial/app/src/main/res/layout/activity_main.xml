@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkrelative"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tasnia"
+            android:textSize="30sp"
+            android:checked="true"
+            android:id="@+id/checkTasnia"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="shahrin"
+            android:textSize="30sp"
+            android:checked="true"
+            android:layout_toRightOf="@+id/checkTasnia"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/checkShahrin"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="orin"
+            android:textSize="30sp"
+            android:checked="true"
+            android:layout_toRightOf="@+id/checkShahrin"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/checkOrin"/>
+
+
+    </RelativeLayout>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/checkrelative"
+        android:orientation="horizontal"
+        android:id="@+id/radiogrp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioMarried"
+            android:text="married"
+            android:checked="true"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioUnmarried"
+            android:text="unmarried"
+            android:checked="true"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"/>
+
+
+    </RadioGroup>
+
+<ProgressBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/progressbar"
+    android:layout_centerInParent="true"
+    android:visibility="visible"
+    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+    android:max="100"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    />
+
+
+</RelativeLayout>

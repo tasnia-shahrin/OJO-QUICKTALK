@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">scrollVerse</string>
+    <!--CUSTOM STRINGS-->
+    <string name="home">Home</string>
+    <string name="add">Add Post</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+
+</resources>
