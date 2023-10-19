@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="title" type="id">title</item>
-    <item name="description" type="id">description</item>
-    <item name="app_logo" type="id">app_logo</item>
-</resources>

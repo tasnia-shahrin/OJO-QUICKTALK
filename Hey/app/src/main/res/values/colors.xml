@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#DC587C</color>
-    <color name="colorPrimaryDark">#860F30</color>
-    <color name="colorBackf">#2A988C</color>
-    <color name="fb_color">#3c5793</color>
-</resources>
