@@ -47,4 +47,6 @@
     </string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_group_chat">GroupChatActivity</string>
+    <string name="title_activity_phone_login">PhoneLoginActivity</string>
 </resources>

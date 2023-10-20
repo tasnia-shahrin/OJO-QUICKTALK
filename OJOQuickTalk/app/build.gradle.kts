@@ -7,6 +7,7 @@ android {
     namespace = "com.example.ojoquicktalk"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.ojoquicktalk"
         minSdk = 19
@@ -30,6 +31,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -41,6 +43,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
     implementation("com.google.firebase:firebase-database")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.github.arthurhub:android-image-cropper:2.8.0")
+
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
     implementation("com.google.firebase:firebase-storage:20.2.1")

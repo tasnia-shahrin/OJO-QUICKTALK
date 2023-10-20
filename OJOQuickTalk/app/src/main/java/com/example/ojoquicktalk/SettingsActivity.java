@@ -1,6 +1,7 @@
 package com.example.ojoquicktalk;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -8,6 +9,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.TextUtils;
@@ -17,6 +19,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.core.view.WindowCompat;
+import androidx.navigation.ActivityNavigatorDestinationBuilderKt;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -43,6 +46,7 @@ public class SettingsActivity extends AppCompatActivity {
     private String currentUserID;
     private FirebaseAuth mAuth;
     private DatabaseReference RootRef;
+    private static final int GalleryPick=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,16 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
         RetrieveUserInfo();
+        userProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, GalleryPick);
+            }
+        });
     }
 
     private void InitializeFields(){
@@ -69,6 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
         userStatus=(EditText) findViewById(R.id.set_profile_status);
         userProfileImage=(CircleImageView) findViewById(R.id.set_profile_image);
     }
+
     private void UpdateSettings(){
         String setUserName=userName.getText().toString();
         String setStatus=userStatus.getText().toString();
