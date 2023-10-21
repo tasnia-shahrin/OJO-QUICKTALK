@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OJOQuickTalk"
         tools:targetApi="31">
+        <activity
+            android:name=".FindFriendsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_find_friends"
+            android:theme="@style/Theme.OJOQuickTalk"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".PhoneLoginActivity"
             android:exported="false"
@@ -41,7 +47,6 @@
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.OJOQuickTalk" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -51,7 +56,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

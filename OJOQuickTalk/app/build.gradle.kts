@@ -44,6 +44,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.github.arthurhub:android-image-cropper:2.8.0")
+    implementation ("com.firebaseui:firebase-ui-database:8.0.2")
 
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
