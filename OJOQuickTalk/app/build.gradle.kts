@@ -46,9 +46,10 @@ dependencies {
     implementation ("com.github.arthurhub:android-image-cropper:2.8.0")
     implementation ("com.firebaseui:firebase-ui-database:8.0.2")
 
+    api ("com.theartofdev.edmodo:android-image-cropper:2.8.+")
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
-    implementation("com.google.firebase:firebase-storage:20.2.1")
+    implementation("com.google.firebase:firebase-storage:11.0.4")
     implementation("com.google.firebase:firebase-firestore-ktx:24.8.1")
     implementation("androidx.navigation:navigation-fragment:2.5.3")
     implementation("androidx.navigation:navigation-ui:2.5.3")
