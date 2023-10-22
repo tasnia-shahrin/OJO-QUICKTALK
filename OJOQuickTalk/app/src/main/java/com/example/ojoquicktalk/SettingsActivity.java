@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.WindowCompat;
 import androidx.navigation.ActivityNavigatorDestinationBuilderKt;
 import androidx.navigation.NavController;
@@ -52,6 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Button UpdateAccountSettings;
     private EditText userName,userStatus;
     private CircleImageView userProfileImage;
+    private androidx.appcompat.widget.Toolbar SettingsToolbar;
     private String currentUserID;
     private String photoUrl;
     private FirebaseAuth mAuth;
@@ -95,6 +97,11 @@ public class SettingsActivity extends AppCompatActivity {
         userName=(EditText) findViewById(R.id.set_user_name);
         userStatus=(EditText) findViewById(R.id.set_profile_status);
         userProfileImage=(CircleImageView) findViewById(R.id.set_profile_image);
+        SettingsToolbar=(Toolbar) findViewById(R.id.settings_toolbar);
+        setSupportActionBar(SettingsToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Account Settings");
         loadingbar=new ProgressDialog(this);
     }
 
