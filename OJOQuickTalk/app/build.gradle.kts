@@ -46,6 +46,7 @@ dependencies {
     implementation ("com.github.arthurhub:android-image-cropper:2.8.0")
     implementation ("com.firebaseui:firebase-ui-database:8.0.2")
 
+
     api ("com.theartofdev.edmodo:android-image-cropper:2.8.+")
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
@@ -54,6 +55,8 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.5.3")
     implementation("androidx.navigation:navigation-ui:2.5.3")
     testImplementation("junit:junit:4.13.2")
+    //noinspection GradleCompatible
+    implementation ("com.google.firebase:firebase-messaging:latest_version")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.google.android.gms:play-services-auth:20.6.0")

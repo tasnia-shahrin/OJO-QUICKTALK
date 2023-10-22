@@ -30,6 +30,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 
 import org.checkerframework.common.initializedfields.qual.InitializedFields;
 
@@ -84,8 +86,11 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+                                String deviceToken= FirebaseMessaging.getInstance().getToken().toString();
                                 String currentUserID=mAuth.getCurrentUser().getUid();
                                 RootRef.child("Users").child(currentUserID).setValue("");
+                                RootRef.child("Users").child(currentUserID).child("device_token")
+                                                .setValue(deviceToken);
                                 SendUserToMainActivity();
                                 Toast.makeText(RegisterActivity.this, "Account created successfully..", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();

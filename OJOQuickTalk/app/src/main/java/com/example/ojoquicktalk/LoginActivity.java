@@ -28,6 +28,10 @@ import com.example.ojoquicktalk.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 
 import org.checkerframework.common.initializedfields.qual.InitializedFields;
 
@@ -39,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingBar ;
    // private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
+    private DatabaseReference UsersRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         InitializFields();
         mAuth=FirebaseAuth.getInstance();
+        UsersRef= FirebaseDatabase.getInstance().getReference().child("Users");
         //currentUser=mAuth.getCurrentUser();
         NeedNewAccountLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,9 +93,21 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                SendUserToMainActivity();
-                                Toast.makeText(LoginActivity.this, "Logged In successful..", Toast.LENGTH_SHORT).show();
-                                loadingBar.dismiss();
+                                String currentUserId=mAuth.getCurrentUser().getUid();
+                                String deviceToken= FirebaseMessaging.getInstance().getToken().toString();
+                                UsersRef.child(currentUserId).child("device_token")
+                                                .setValue(deviceToken)
+                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if(task.isSuccessful()){
+                                                                    SendUserToMainActivity();
+                                                                    Toast.makeText(LoginActivity.this,"Logged In successful..", Toast.LENGTH_SHORT).show();
+                                                                    loadingBar.dismiss();
+                                                                }
+                                                            }
+                                                        });
+
                             }
                             else{
                                 String message=task.getException().toString();

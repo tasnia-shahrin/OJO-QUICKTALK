@@ -1,6 +1,8 @@
 package com.example.ojoquicktalk;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +63,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MessageViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull MessageViewHolder holder,final int i) {
         String messageSenderId = mAuth.getCurrentUser().getUid();
         Messages messages = userMessagesList.get(i);
 
@@ -87,24 +89,66 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
             }
         });
+
+        holder.receiverMessageText.setVisibility(View.GONE);
+        holder.receiverProfileImage.setVisibility(View.GONE);
+        holder.senderMessageText.setVisibility(View.GONE);
+        holder.messageSenderPicture.setVisibility(View.GONE);
+        holder.messageReceiverPicture.setVisibility(View.GONE);
         if(fromMessageType.equals("text")){
-            holder.receiverMessageText.setVisibility(View.INVISIBLE);
-            holder.receiverProfileImage.setVisibility(View.INVISIBLE);
-            holder.senderMessageText.setVisibility(View.INVISIBLE);
+
 
             if(fromUserID.equals(messageSenderId)){
                 holder.senderMessageText.setVisibility(View.VISIBLE);
 
                 holder.senderMessageText.setBackgroundResource(R.drawable.sender_message_layout);
                 holder.senderMessageText.setTextColor(Color.BLACK);
-                holder.senderMessageText.setText(messages.getMessage());
+                holder.senderMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "-"+ messages.getDate());
             }
             else{
                 holder.receiverProfileImage.setVisibility(View.VISIBLE);
                 holder.receiverMessageText.setVisibility(View.VISIBLE);
                 holder.receiverMessageText.setBackgroundResource(R.drawable.receiver_message_layout);
                holder.receiverMessageText.setTextColor(Color.BLACK);
-                holder.receiverMessageText.setText(messages.getMessage());
+                holder.receiverMessageText.setText(messages.getMessage() + "\n \n" + messages.getTime() + "-"+ messages.getDate());
+
+            }
+        }
+        else if(fromMessageType.equals("image")){
+            if(fromUserID.equals(messageSenderId)){
+                holder.messageSenderPicture.setVisibility(View.VISIBLE);
+                Picasso.get().load(messages.getMessage()).into(holder.messageSenderPicture);
+            }
+            else{
+                holder.receiverProfileImage.setVisibility(View.VISIBLE);
+                holder.messageReceiverPicture.setVisibility(View.VISIBLE);
+                Picasso.get().load(messages.getMessage()).into(holder.messageReceiverPicture);
+            }
+        }
+        else{
+            if(fromUserID.equals(messageSenderId)){
+                holder.messageSenderPicture.setVisibility(View.VISIBLE);
+                holder.messageSenderPicture.setBackgroundResource(R.drawable.file);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(userMessagesList.get(i).getMessage()));
+                        holder.itemView.getContext().startActivity(intent);
+                    }
+                });
+            }
+            else{
+                holder.receiverProfileImage.setVisibility(View.VISIBLE);
+                holder.messageReceiverPicture.setVisibility(View.VISIBLE);
+                holder.messageReceiverPicture.setBackgroundResource(R.drawable.file);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(userMessagesList.get(i).getMessage()));
+                        holder.itemView.getContext().startActivity(intent);
+                    }
+                });
+
 
             }
         }
