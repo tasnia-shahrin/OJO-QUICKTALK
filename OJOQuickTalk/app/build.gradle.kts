@@ -14,6 +14,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled=true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,7 +47,9 @@ dependencies {
     implementation ("com.github.arthurhub:android-image-cropper:2.8.0")
     implementation ("com.firebaseui:firebase-ui-database:8.0.2")
 
-
+    implementation ("com.google.firebase:firebase-auth:latest_version")
+    implementation ("com.google.firebase:firebase-database:latest_version")
+    implementation ("com.firebaseui:firebase-ui-database:latest_version")
     api ("com.theartofdev.edmodo:android-image-cropper:2.8.+")
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
@@ -61,4 +64,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.google.android.gms:play-services-auth:20.6.0")
     implementation("com.airbnb.android:lottie:6.1.0")
+
 }

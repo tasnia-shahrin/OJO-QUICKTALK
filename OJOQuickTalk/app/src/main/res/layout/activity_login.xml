@@ -6,18 +6,14 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".LoginActivity"
-    android:background="@drawable/w1">
+    android:background="@drawable/w4">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/login_image"
                 android:layout_width="300dp"
@@ -28,13 +24,23 @@
                 android:scaleType="fitCenter"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/chat" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/linear_bg"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
             <EditText
                 android:id="@+id/login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/login_image"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="17dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginBottom="10dp"
@@ -52,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/login_email"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="17dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginBottom="10dp"
@@ -86,7 +92,7 @@
                 android:id="@+id/login_button"
                 android:layout_below="@+id/forget_password_link"
                 android:padding="4dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginLeft="19dp"
                 android:layout_marginRight="19dp"
                 android:layout_marginBottom="10dp"
@@ -123,6 +129,7 @@
                 android:textAlignment="center"
                 android:textSize="17sp"
                 android:textStyle="bold"
+                android:textColor="@color/colorAccent"
                 />
             <Button
                 android:layout_width="match_parent"
@@ -140,7 +147,8 @@
                 android:textColor="@color/colorAccent"
                 android:background="@drawable/buttons"
                 android:drawableStart="@drawable/phone"/>
+    </LinearLayout>
+
 
         </RelativeLayout>
-    </ScrollView>
-</RelativeLayout>
+   
