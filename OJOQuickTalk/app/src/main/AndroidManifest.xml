@@ -17,6 +17,11 @@
         android:theme="@style/Theme.OJOQuickTalk"
         tools:targetApi="31">
         <activity
+            android:name=".ImageViewerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_image_viewer"
+            android:theme="@style/Theme.OJOQuickTalk" />
+        <activity
             android:name=".ChatActivity"
             android:exported="false"
             android:label="@string/title_activity_chat"

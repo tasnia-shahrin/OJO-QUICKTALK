@@ -52,4 +52,5 @@
     <string name="title_activity_find_friends">FindFriendsActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_image_viewer">ImageViewerActivity</string>
 </resources>
