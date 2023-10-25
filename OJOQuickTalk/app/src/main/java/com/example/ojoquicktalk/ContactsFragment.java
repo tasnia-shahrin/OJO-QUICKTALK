@@ -1,5 +1,6 @@
 package com.example.ojoquicktalk;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -77,6 +78,16 @@ public class ContactsFragment extends Fragment {
             protected void onBindViewHolder(@NonNull final ContactsViewHolder holder, int position, @NonNull Contacts model)
             {
                 final String userIDs = getRef(position).getKey();
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent chatIntent=new Intent(getContext(),ChatActivity.class);
+                        chatIntent.putExtra("visit_user_id",userIDs);
+                        chatIntent.putExtra("visit_user_name",model.getName());
+                        chatIntent.putExtra("visit_image",model.getImage());
+                        startActivity(chatIntent);
+                    }
+                });
 
                 UsersRef.child(userIDs).addValueEventListener(new ValueEventListener() {
                     @Override
@@ -131,6 +142,7 @@ public class ContactsFragment extends Fragment {
 
                     }
                 });
+
             }
 
             @NonNull
@@ -147,7 +159,28 @@ public class ContactsFragment extends Fragment {
         adapter.startListening();
     }
 
-
+//    private void openChatActivity(String userIDs) {
+//        UsersRef.child(userIDs).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()){
+//                    String contactName=snapshot.child("name").getValue().toString();
+//                    String contactImage=snapshot.child("image").getValue().toString();
+//                    Intent chatIntent=new Intent(getContext(),ChatActivity.class);
+//                    chatIntent.putExtra("visit_user_id",userIDs);
+//                    chatIntent.putExtra("visit_user_name",contactName);
+//                    chatIntent.putExtra("visit_image",contactImage);
+//                    startActivity(chatIntent);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//
+//    }
 
 
     public static class ContactsViewHolder extends RecyclerView.ViewHolder

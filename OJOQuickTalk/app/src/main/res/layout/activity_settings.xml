@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:background="@drawable/w7">
     <include
         layout="@layout/app_bar_layout"
         android:id="@+id/settings_toolbar"
@@ -31,7 +32,7 @@
         android:hint="Username"
         android:textAlignment="center"
         android:drawableStart="@drawable/edit_profile"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:background="@drawable/inputs"
         android:layout_marginStart="15dp"
@@ -47,7 +48,7 @@
         android:hint="Hey! I am available now"
         android:textAlignment="center"
         android:drawableStart="@drawable/edit_status"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:background="@drawable/inputs"
         android:layout_marginStart="15dp"

@@ -22,6 +22,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -95,9 +96,14 @@ public class ChatActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         RootRef= FirebaseDatabase.getInstance().getReference();
         messageSenderID=mAuth.getCurrentUser().getUid();
-        messageReceiverID=getIntent().getExtras().get("visit_user_id").toString();
-        messageReceiverName=getIntent().getExtras().get("visit_user_name").toString();
-        messageReceiverImage=getIntent().getExtras().get("visit_image").toString();
+        messageReceiverID=getIntent().getStringExtra("visit_user_id");
+        messageReceiverName=getIntent().getStringExtra("visit_user_name");
+        messageReceiverImage=getIntent().getStringExtra("visit_image");
+        Log.d("ChatActivity", "Receiver ID: " + messageReceiverID);
+        Log.d("ChatActivity", "Receiver Name: " + messageReceiverName);
+        Log.d("ChatActivity", "Receiver Image: " + messageReceiverImage);
+        Log.d("ChatActivity", "Image URL: " + messageReceiverImage);
+
         IntializeControllers();
         userName.setText(messageReceiverName);
         Picasso.get().load(messageReceiverImage).placeholder(R.drawable.profile_image).into(userImage);

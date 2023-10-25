@@ -37,10 +37,13 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class GroupChatActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private ImageButton SendMessageButton;
+
     private EditText userMessageInput;
     private ScrollView mScrollView;
     private TextView displayTextMessages;
@@ -120,6 +123,7 @@ public class GroupChatActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.group_chat_bar_layout);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle(currentGroupName);
+
 
         SendMessageButton = (ImageButton) findViewById(R.id.send_message_button);
         userMessageInput = (EditText) findViewById(R.id.input_group_message);

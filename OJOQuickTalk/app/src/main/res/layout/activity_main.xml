@@ -12,13 +12,14 @@
         android:id="@+id/appBarLayout">
         <include
             android:id="@+id/main_page_toolbar"
-            layout="@layout/app_bar_layout">
+            layout="@layout/app_bar_layout"
+            >
         </include>
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/main_tabs"
-            android:background="@color/colorPrimary"
+            android:background="#f5c6da"
             app:tabTextColor="@color/colorPrimaryDark"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -28,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/main_tabs_pager"
-        android:layout_below="@+id/appBarLayout">
+        android:layout_below="@+id/appBarLayout"
+        android:background="@color/colorAccent">
 
     </androidx.viewpager.widget.ViewPager>
 

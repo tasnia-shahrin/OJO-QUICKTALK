@@ -6,16 +6,12 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".RegisterActivity"
-    android:background="@drawable/w1">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    android:background="@drawable/w4">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginTop="10dp"
+      android:orientation="horizontal">
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/register_image"
@@ -27,6 +23,15 @@
                 android:scaleType="fitCenter"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/chat" />
+  </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/linear_bg"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="60dp">
             <EditText
                 android:id="@+id/register_email"
                 android:layout_width="match_parent"
@@ -94,7 +99,5 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"
                 />
+    </LinearLayout>
         </RelativeLayout>
-    </ScrollView>
-
-    </RelativeLayout>

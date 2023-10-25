@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,6 +36,7 @@
                     android:textAlignment="textStart"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     />
 
                 <ImageView
@@ -56,6 +57,7 @@
                 android:text="user status"
                 android:layout_margin="2dp"
                 android:textAlignment="textStart"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 />
 
