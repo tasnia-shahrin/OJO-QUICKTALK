@@ -99,10 +99,6 @@ public class ChatActivity extends AppCompatActivity {
         messageReceiverID=getIntent().getStringExtra("visit_user_id");
         messageReceiverName=getIntent().getStringExtra("visit_user_name");
         messageReceiverImage=getIntent().getStringExtra("visit_image");
-        Log.d("ChatActivity", "Receiver ID: " + messageReceiverID);
-        Log.d("ChatActivity", "Receiver Name: " + messageReceiverName);
-        Log.d("ChatActivity", "Receiver Image: " + messageReceiverImage);
-        Log.d("ChatActivity", "Image URL: " + messageReceiverImage);
 
         IntializeControllers();
         userName.setText(messageReceiverName);

@@ -35,6 +35,7 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
             case 3:
                 RequestsFragment requestsFragment = new RequestsFragment();
                 return requestsFragment;
+
             default:
                 return null;
         }
@@ -60,12 +61,13 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
                 return "Chats";
 
             case 1:
-                return "Groups";
+                return "Group";
 
             case 2:
-                return "Contacts";
+                return "Contact";
             case 3:
-                return "Requests";
+                return "Request";
+          
             default:
                 return null;
         }

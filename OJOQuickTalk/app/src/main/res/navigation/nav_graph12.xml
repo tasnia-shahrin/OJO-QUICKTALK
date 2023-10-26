@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph12"
+    app:startDestination="@id/First12Fragment">
+
+    <fragment
+        android:id="@+id/First12Fragment"
+        android:name="com.example.ojoquicktalk.First12Fragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first12">
+
+        <action
+            android:id="@+id/action_First12Fragment_to_Second12Fragment"
+            app:destination="@id/Second12Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/Second12Fragment"
+        android:name="com.example.ojoquicktalk.Second12Fragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second12">
+
+        <action
+            android:id="@+id/action_Second12Fragment_to_First12Fragment"
+            app:destination="@id/First12Fragment" />
+    </fragment>
+</navigation>

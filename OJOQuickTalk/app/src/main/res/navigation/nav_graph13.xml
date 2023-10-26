@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph13"
+    app:startDestination="@id/First13Fragment">
+
+    <fragment
+        android:id="@+id/First13Fragment"
+        android:name="com.example.ojoquicktalk.First13Fragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first13">
+
+        <action
+            android:id="@+id/action_First13Fragment_to_Second13Fragment"
+            app:destination="@id/Second13Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/Second13Fragment"
+        android:name="com.example.ojoquicktalk.Second13Fragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second13">
+
+        <action
+            android:id="@+id/action_Second13Fragment_to_First13Fragment"
+            app:destination="@id/First13Fragment" />
+    </fragment>
+</navigation>

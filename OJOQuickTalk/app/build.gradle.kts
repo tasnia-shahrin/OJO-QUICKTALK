@@ -1,6 +1,9 @@
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
+
+
+
 }
 
 android {
@@ -37,8 +40,9 @@ android {
 
 dependencies {
 
+
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
@@ -46,7 +50,8 @@ dependencies {
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.github.arthurhub:android-image-cropper:2.8.0")
     implementation ("com.firebaseui:firebase-ui-database:8.0.2")
-
+    implementation("com.google.gms:google-services:4.3.10")
+ 
     implementation ("com.google.firebase:firebase-auth:latest_version")
     implementation ("com.google.firebase:firebase-database:latest_version")
     implementation ("com.firebaseui:firebase-ui-database:latest_version")
@@ -54,10 +59,12 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
     implementation("com.google.firebase:firebase-storage:11.0.4")
-    implementation("com.google.firebase:firebase-firestore-ktx:24.8.1")
+    implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
     implementation("androidx.navigation:navigation-fragment:2.5.3")
     implementation("androidx.navigation:navigation-ui:2.5.3")
+    implementation("com.google.firebase:firebase-firestore:24.9.0")
     testImplementation("junit:junit:4.13.2")
+    
     //noinspection GradleCompatible
     implementation ("com.google.firebase:firebase-messaging:latest_version")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -67,5 +74,8 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     // For control over item selection of both touch and mouse driven selection
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+
+
+
 
 }

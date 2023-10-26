@@ -1,7 +1,8 @@
 package com.example.ojoquicktalk;
 
 public class Contacts {
-        public String name, status, image;
+        public String name, status, image,fcmToken;
+        private long timestamp;
 
         public Contacts()
         {
@@ -38,4 +39,19 @@ public class Contacts {
             this.image = image;
         }
 
+    public String getFcmToken() {
+        return fcmToken;
+    }
+
+    public void setFcmToken(String fcmToken) {
+        this.fcmToken = fcmToken;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
 }

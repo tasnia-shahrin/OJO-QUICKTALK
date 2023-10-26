@@ -54,4 +54,7 @@
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_image_viewer">ImageViewerActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_add_note">AddNoteActivity</string>
+    <string name="title_activity_notes">NotesActivity</string>
+    <string name="title_activity_note_details">NoteDetailsActivity</string>
 </resources>
