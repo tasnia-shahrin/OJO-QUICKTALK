@@ -78,16 +78,7 @@ public class ContactsFragment extends Fragment {
             protected void onBindViewHolder(@NonNull final ContactsViewHolder holder, int position, @NonNull Contacts model)
             {
                 final String userIDs = getRef(position).getKey();
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent chatIntent=new Intent(getContext(),ChatActivity.class);
-                        chatIntent.putExtra("visit_user_id",userIDs);
-                        chatIntent.putExtra("visit_user_name",model.getName());
-                        chatIntent.putExtra("visit_image",model.getImage());
-                        startActivity(chatIntent);
-                    }
-                });
+
 
                 UsersRef.child(userIDs).addValueEventListener(new ValueEventListener() {
                     @Override

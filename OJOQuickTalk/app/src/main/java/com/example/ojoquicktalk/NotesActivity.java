@@ -68,11 +68,30 @@ public class NotesActivity extends AppCompatActivity {
         noteAdapter = new NoteAdapter(options,this);
         recyclerView.setAdapter(noteAdapter);
 
-            noteAdapter.startListening();
 
-            noteAdapter.notifyDataSetChanged();
         }
+       protected void onStart() {
+
+           super.onStart();
+           recyclerView.setAdapter(noteAdapter);
+           noteAdapter.startListening();
+       }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        recyclerView.setAdapter(noteAdapter);
+        noteAdapter.stopListening();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        recyclerView.setAdapter(noteAdapter);
+        noteAdapter.notifyDataSetChanged();
+
+    }
+}
 
 
 
