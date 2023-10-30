@@ -20,13 +20,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatsFragment extends Fragment {
     private View PrivateChatsView;
+
 
     private RecyclerView chatsList;
     private DatabaseReference ChatsRef, UsersRef;
@@ -56,9 +62,10 @@ public class ChatsFragment extends Fragment {
     public void onStart() {
         super.onStart();
         if (ChatsRef != null && UsersRef != null) {
+            Query query = ChatsRef.orderByChild("timestamp");
             FirebaseRecyclerOptions<Contacts> options =
                     new FirebaseRecyclerOptions.Builder<Contacts>()
-                            .setQuery(ChatsRef.orderByChild("timestamp"), Contacts.class)
+                            .setQuery(query, Contacts.class)
                             .build();
 
             FirebaseRecyclerAdapter<Contacts, ChatsViewHolder> adapter =
@@ -66,6 +73,7 @@ public class ChatsFragment extends Fragment {
                         @Override
                         protected void onBindViewHolder(@NonNull ChatsViewHolder holder, int position, @NonNull Contacts model) {
                             final String usersIDs = getRef(position).getKey();
+
                             final String[] retImage = {"default_image"};
                             UsersRef.child(usersIDs).addValueEventListener(new ValueEventListener() {
                                 @Override
@@ -122,6 +130,12 @@ public class ChatsFragment extends Fragment {
 
             chatsList.setAdapter(adapter);
             adapter.startListening();
+            ArrayList<Contacts> chatList = new ArrayList();
+            for (int i = 0; i < adapter.getItemCount(); i++) {
+                chatList.add(adapter.getItem(i));
+            }
+            Collections.reverse(chatList);
+
             adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
                 @Override
                 public void onItemRangeInserted(int positionStart, int itemCount) {

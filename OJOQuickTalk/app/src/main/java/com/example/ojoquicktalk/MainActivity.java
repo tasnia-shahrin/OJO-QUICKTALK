@@ -227,6 +227,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(loginIntent);
 
     }
+
+
+
+
     private void SendUserToSettingsActivity() {
         Intent settingsIntent = new Intent(MainActivity.this,SettingsActivity.class);
         startActivity(settingsIntent);
@@ -256,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
                 .updateChildren(onlineStateMap);
 
     }
+
 
 
 }
