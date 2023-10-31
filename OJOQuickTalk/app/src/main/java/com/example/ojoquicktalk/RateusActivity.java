@@ -41,7 +41,7 @@ public class RateusActivity extends AppCompatActivity{
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    TextView ev,mail,mail2;
+    TextView ev,mail,mail2,mail3;
     LottieAnimationView lottie;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -58,6 +58,7 @@ public class RateusActivity extends AppCompatActivity{
         ev= findViewById(R.id.subTitleTv);
         mail= findViewById(R.id.email);
         mail2=findViewById(R.id.email2);
+        mail3=findViewById(R.id.email3);
         ev.setText(email);
         lottie= findViewById(R.id.lottie);
 
@@ -91,6 +92,22 @@ public class RateusActivity extends AppCompatActivity{
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Regarding the app"); // Set the email subject
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I am interested in your app."); // Set the email body
 
+                try {
+                    startActivity(Intent.createChooser(emailIntent, "Send Email"));
+                } catch (android.content.ActivityNotFoundException ex) {
+                    // Handle the case where no email client is installed on the device
+                    Toast.makeText(RateusActivity.this, "No email client installed.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        mail3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sellerEmail= mail3.getText().toString();
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:" + sellerEmail)); // Set the email address
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Regarding the app"); // Set the email subject
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I am interested in your app."); // Set the email body
                 try {
                     startActivity(Intent.createChooser(emailIntent, "Send Email"));
                 } catch (android.content.ActivityNotFoundException ex) {

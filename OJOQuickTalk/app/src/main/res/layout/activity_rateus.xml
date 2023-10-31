@@ -138,6 +138,18 @@
                 android:paddingStart="60dp"
                 android:textColor="@color/black"
                 android:textSize="22dp" />
+            <TextView
+                android:id="@+id/email3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tashrifaoishe@gmail.com"
+                android:textStyle="italic"
+                android:drawableStart="@drawable/emaill"
+                android:drawablePadding="10dp"
+                android:padding="10dp"
+                android:paddingStart="60dp"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
 
 
             <com.airbnb.lottie.LottieAnimationView
