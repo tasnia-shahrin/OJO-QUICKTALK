@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button LoginButton,PhoneLoginButton;
     private EditText UserEmail,UserPassword;
-    private TextView NeedNewAccountLink,ForgetPasswordLink;
+    private TextView NeedNewAccountLink,LoginText;
     private ProgressDialog loadingBar ;
    // private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
@@ -124,7 +124,8 @@ public class LoginActivity extends AppCompatActivity {
         UserEmail=(EditText) findViewById(R.id.login_email);
         UserPassword=(EditText) findViewById(R.id.login_password);
         NeedNewAccountLink=(TextView) findViewById(R.id.need_new_account_link);
-        ForgetPasswordLink=(TextView) findViewById(R.id.forget_password_link);
+        LoginText=(TextView)findViewById(R.id.login_text);
+
         loadingBar=new ProgressDialog(this);
     }
 

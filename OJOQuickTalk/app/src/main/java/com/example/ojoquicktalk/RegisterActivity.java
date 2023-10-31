@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Button CreateAccountButton;
     private EditText UserEmail,UserPassword;
-    private TextView AlreadyHaveAccountLink;
+    private TextView AlreadyHaveAccountLink,RegisterText;
     private DatabaseReference RootRef;
    private FirebaseAuth mAuth;
    private ProgressDialog loadingBar;
@@ -107,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void InitializeFields() {
         CreateAccountButton = (Button) findViewById(R.id.register_button);
-
+        RegisterText=(TextView)findViewById(R.id.register_text);
         UserEmail=(EditText) findViewById(R.id.register_email);
         UserPassword=(EditText) findViewById(R.id.register_password);
         AlreadyHaveAccountLink=(TextView) findViewById(R.id.already_have_account_link);

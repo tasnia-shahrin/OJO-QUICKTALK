@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".RegisterActivity"
-    android:background="@drawable/w4">
+    android:background="@drawable/back">
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -32,12 +32,20 @@
         android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:padding="60dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Your Account"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/register_text"/>
             <EditText
                 android:id="@+id/register_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/register_image"
+                android:layout_below="@+id/register_text"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="17dp"
                 android:layout_marginRight="17dp"
@@ -97,7 +105,7 @@
                 android:textAlignment="center"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 />
     </LinearLayout>
         </RelativeLayout>

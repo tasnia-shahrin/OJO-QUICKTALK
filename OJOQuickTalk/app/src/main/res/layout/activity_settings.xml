@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".SettingsActivity"
-    android:background="@drawable/w7">
+    android:background="@drawable/w8">
     <include
         layout="@layout/app_bar_layout"
         android:id="@+id/settings_toolbar"

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_app_bar"
-    android:background="#f5c6da"
+    android:background="@drawable/bar"
     app:titleTextColor="@color/colorPrimaryDark"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
