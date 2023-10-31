@@ -15,6 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_centerInParent="true"
         app:lottie_autoPlay="true"
+        android:background="#00000000"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/chatactivity" />
 
@@ -23,11 +24,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-
-        android:text="@string/heading1"
+        android:text="@string/Onboarding1"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="28dp"
         android:textStyle="bold" />
 
     <TextView
@@ -35,10 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-
-        android:text="@string/desc1"
+        android:text="You can chat and create group with friends"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="10dp" />
+        android:textSize="20dp" />
 
 </LinearLayout>

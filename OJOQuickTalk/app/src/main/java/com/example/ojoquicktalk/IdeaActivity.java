@@ -1,6 +1,5 @@
 package com.example.ojoquicktalk;
 
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
@@ -77,8 +76,9 @@ public class IdeaActivity extends AppCompatActivity {
             dots[i].setText(Html.fromHtml("&#8226"));
             dots[i].setTextSize(35);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                dots[i].setTextColor(getResources().getColor(R.color.colorAccent,getApplication().getTheme()));
+                dots[i].setTextColor(getResources().getColor(R.color.colorAccent, getApplication().getTheme()));
             }
+            mDotLayout.addView(dots[i]);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             dots[position].setTextColor(getResources().getColor(R.color.lavender0, getApplication().getTheme()));

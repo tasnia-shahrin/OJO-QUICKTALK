@@ -9,6 +9,7 @@
     android:fitsSystemWindows="true"
     tools:layout_editor_absoluteX="-314dp"
     tools:layout_editor_absoluteY="-6dp"
+    android:background="@drawable/bar"
     tools:openDrawer="start">
 
 
