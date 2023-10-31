@@ -21,7 +21,7 @@ public class NotesActivity extends AppCompatActivity {
     FloatingActionButton addNoteBtn;
 
     RecyclerView recyclerView;
-    ImageButton menuBtn;
+
     NoteAdapter noteAdapter;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -31,34 +31,17 @@ public class NotesActivity extends AppCompatActivity {
 
         addNoteBtn = findViewById(R.id.add_note_btn);
         recyclerView = findViewById(R.id.recyler_view);
-        menuBtn = findViewById(R.id.menu_btn);
+
 
 
         addNoteBtn.setOnClickListener((v)-> startActivity(new Intent(NotesActivity.this,NoteDetailsActivity.class)) );
-        menuBtn.setOnClickListener((v)->showMenu() );
+
         setupRecyclerView();
     }
 
 
 
-    void showMenu(){
-        PopupMenu popupMenu  = new PopupMenu(NotesActivity.this,menuBtn);
-        popupMenu.getMenu().add("Logout");
-        popupMenu.show();
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                if(menuItem.getTitle()=="Logout"){
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(NotesActivity.this,LoginActivity.class));
-                    finish();
-                    return true;
-                }
-                return false;
-            }
-        });
 
-    }
 
     void setupRecyclerView(){
         Query query  = Utility.getCollectionReferenceForNotes().orderBy("timestamp",Query.Direction.DESCENDING);

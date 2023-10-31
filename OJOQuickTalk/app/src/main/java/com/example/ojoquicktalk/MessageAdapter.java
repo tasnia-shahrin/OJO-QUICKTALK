@@ -275,9 +275,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                                     holder.itemView.getContext().startActivity(intent);
 
                                 }
-                                else  if(i==2){
-
-                                }
+                              
 
                             }
                         });
