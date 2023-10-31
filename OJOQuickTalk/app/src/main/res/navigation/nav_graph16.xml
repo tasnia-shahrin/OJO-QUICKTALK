@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph16"
+    app:startDestination="@id/First16Fragment">
+
+    <fragment
+        android:id="@+id/First16Fragment"
+        android:name="com.example.ojoquicktalk.First16Fragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first16">
+
+        <action
+            android:id="@+id/action_First16Fragment_to_Second16Fragment"
+            app:destination="@id/Second16Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/Second16Fragment"
+        android:name="com.example.ojoquicktalk.Second16Fragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second16">
+
+        <action
+            android:id="@+id/action_Second16Fragment_to_First16Fragment"
+            app:destination="@id/First16Fragment" />
+    </fragment>
+</navigation>

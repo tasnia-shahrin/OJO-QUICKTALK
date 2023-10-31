@@ -18,6 +18,12 @@
         tools:ignore="MissingClass"
         tools:targetApi="31">
         <activity
+            android:name=".ShareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RateusActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

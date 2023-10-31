@@ -52,13 +52,13 @@ public class NotesActivity extends AppCompatActivity {
         recyclerView.setAdapter(noteAdapter);
 
 
-        }
-       protected void onStart() {
+    }
+    protected void onStart() {
 
-           super.onStart();
-           recyclerView.setAdapter(noteAdapter);
-           noteAdapter.startListening();
-       }
+        super.onStart();
+        recyclerView.setAdapter(noteAdapter);
+        noteAdapter.startListening();
+    }
 
     @Override
     protected void onStop() {

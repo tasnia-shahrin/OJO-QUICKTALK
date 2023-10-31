@@ -176,6 +176,12 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.main_notes_option){
             SendUserToNotesActivity();
         }
+        if(item.getItemId()==R.id.main_contact_option){
+            SendUserTorateusActivity();
+        }
+        if(item.getItemId()==R.id.main_shear_option){
+            SendUserToShareActivity();
+        }
         return true;
     }
 
@@ -243,7 +249,15 @@ public class MainActivity extends AppCompatActivity {
         Intent notesIntent=new Intent(MainActivity.this, NotesActivity.class);
         startActivity(notesIntent);
     }
+    private void SendUserTorateusActivity() {
+        Intent rateusIntent = new Intent(MainActivity.this,RateusActivity.class);
+        startActivity(rateusIntent);
+    }
 
+    private void SendUserToShareActivity() {
+        Intent ShareIntent = new Intent(MainActivity.this,ShareActivity.class);
+        startActivity(ShareIntent);
+    }
     private void updateUserStatus(String state){
         String saveCurrentTime,saveCurrentDate;
         Calendar calendar=Calendar.getInstance();

@@ -20,6 +20,8 @@ public class Messages {
         this.name = name;
     }
 
+
+
     public String getFrom() {
         return from;
     }

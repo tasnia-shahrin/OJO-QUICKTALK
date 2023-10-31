@@ -1,5 +1,6 @@
 package com.example.ojoquicktalk;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -68,13 +69,16 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MessageViewHolder holder,final int position) {
+    public void onBindViewHolder(@NonNull MessageViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         String messageSenderId = mAuth.getCurrentUser().getUid();
         Messages messages = userMessagesList.get(position);
 
         String fromUserID = messages.getFrom();
         String fromMessageType = messages.getType();
-
+        if (fromUserID == null) {
+            // Handle this case as needed, e.g., return or display an error message
+            return;
+        }
         usersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(fromUserID);
         usersRef.addValueEventListener(new ValueEventListener() {
             @Override

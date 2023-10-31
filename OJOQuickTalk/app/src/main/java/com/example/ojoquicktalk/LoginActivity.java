@@ -39,9 +39,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button LoginButton,PhoneLoginButton;
     private EditText UserEmail,UserPassword;
-    private TextView NeedNewAccountLink,LoginText;
+    private TextView NeedNewAccountLink,ForgetPasswordLink;
     private ProgressDialog loadingBar ;
-   // private FirebaseUser currentUser;
+    // private FirebaseUser currentUser;
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
 
@@ -96,17 +96,17 @@ public class LoginActivity extends AppCompatActivity {
                                 String currentUserId=mAuth.getCurrentUser().getUid();
                                 String deviceToken= FirebaseMessaging.getInstance().getToken().toString();
                                 UsersRef.child(currentUserId).child("device_token")
-                                                .setValue(deviceToken)
-                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                            @Override
-                                                            public void onComplete(@NonNull Task<Void> task) {
-                                                                if(task.isSuccessful()){
-                                                                    SendUserToMainActivity();
-                                                                    Toast.makeText(LoginActivity.this,"Logged In successful..", Toast.LENGTH_SHORT).show();
-                                                                    loadingBar.dismiss();
-                                                                }
-                                                            }
-                                                        });
+                                        .setValue(deviceToken)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()){
+                                                    SendUserToMainActivity();
+                                                    Toast.makeText(LoginActivity.this,"Logged In successful..", Toast.LENGTH_SHORT).show();
+                                                    loadingBar.dismiss();
+                                                }
+                                            }
+                                        });
 
                             }
                             else{
@@ -124,8 +124,7 @@ public class LoginActivity extends AppCompatActivity {
         UserEmail=(EditText) findViewById(R.id.login_email);
         UserPassword=(EditText) findViewById(R.id.login_password);
         NeedNewAccountLink=(TextView) findViewById(R.id.need_new_account_link);
-        LoginText=(TextView)findViewById(R.id.login_text);
-
+        ForgetPasswordLink=(TextView) findViewById(R.id.forget_password_link);
         loadingBar=new ProgressDialog(this);
     }
 

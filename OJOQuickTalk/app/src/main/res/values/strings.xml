@@ -57,11 +57,17 @@
     <string name="title_activity_add_note">AddNoteActivity</string>
     <string name="title_activity_notes">NotesActivity</string>
     <string name="title_activity_note_details">NoteDetailsActivity</string>
-    <string name="heading1">Quick Chat</string>
-    <string name="heading2">Find Friends &amp; Update Profile</string>
+    <string name="heading1">Chat and Group Chat</string>
+    <string name="heading2">Find Friends</string>
     <string name="heading3">Keep Notes</string>
-    <string name="desc1">You can quickly chat,sending files,images in personal or group here</string>
-    <string name="desc2">You can find friends and update your profile like image,name,bio</string>
-    <string name="desc3">You can save any notes here like plan,thinking etc</string>
+    <string name="desc1">You can chat and create group with friends here</string>
+    <string name="desc2">You can find friends here</string>
+    <string name="desc3">You can keep notes of anything here</string>
+
+
+    <string name="link">
+        <a href="https://github.com/tasnia-shahrin/OJO-QUICKTALK/tree/main"> PageTradeGit</a>
+    </string>
+    <string name="Onboarding1">Chat and Group Chat</string>
 
 </resources>

@@ -63,6 +63,7 @@ public class ChatsFragment extends Fragment {
         super.onStart();
         if (ChatsRef != null && UsersRef != null) {
             Query query = ChatsRef.orderByChild("timestamp");
+
             FirebaseRecyclerOptions<Contacts> options =
                     new FirebaseRecyclerOptions.Builder<Contacts>()
                             .setQuery(query, Contacts.class)

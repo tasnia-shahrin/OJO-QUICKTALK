@@ -75,31 +75,31 @@ public class FindFriendsActivity extends AppCompatActivity
 
             @Override
             protected void onBindViewHolder(@NonNull FindFriendViewHolder holder, @SuppressLint("RecyclerView") int position , @NonNull Contacts model) {
-                
+
                 holder.userName.setText(model.getName());
-                 holder.userStatus.setText(model.getStatus());
-                 Picasso.get().load(model.getImage()).into(holder.profileImage);
-                 holder.itemView.setOnClickListener(new View.OnClickListener() {
-                     @Override
-                     public void onClick(View view) {
-                         String visit_user_id=getRef(position).getKey();
-                         Intent profileIntent=new Intent(FindFriendsActivity.this,ProfileActivity.class);
-                         profileIntent.putExtra("visit_user_id",visit_user_id);
-                         startActivity(profileIntent);
-                     }
-                 });
+                holder.userStatus.setText(model.getStatus());
+                Picasso.get().load(model.getImage()).into(holder.profileImage);
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String visit_user_id=getRef(position).getKey();
+                        Intent profileIntent=new Intent(FindFriendsActivity.this,ProfileActivity.class);
+                        profileIntent.putExtra("visit_user_id",visit_user_id);
+                        startActivity(profileIntent);
+                    }
+                });
 //
 //
             }
 
             @NonNull
-                    @Override
-                    public FindFriendViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-                        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.users_display_layout, viewGroup, false);
-                        FindFriendViewHolder viewHolder = new FindFriendViewHolder(view);
-                        return viewHolder;
-                    }
-                };
+            @Override
+            public FindFriendViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.users_display_layout, viewGroup, false);
+                FindFriendViewHolder viewHolder = new FindFriendViewHolder(view);
+                return viewHolder;
+            }
+        };
         FindFriendsRecyclerList.setAdapter(adapter);
 
         adapter.startListening();
